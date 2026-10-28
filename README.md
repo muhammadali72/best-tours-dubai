@@ -23,10 +23,10 @@ PHP 8.2+, SQLite through PDO, HTML, CSS and JavaScript. Apache/LiteSpeed rewrite
 
 ## Setup
 
-After cloning, extract every `assets-*.zip` archive into the repository root. These archives contain the original media and larger public template/seed files, with their folder paths preserved. Application code remains browsable in the repository.
+After cloning, extract every `resources/assets-*.zip` archive into the repository root. These archives contain the original media and larger public template/seed files, with their folder paths preserved. Application code remains browsable in the repository.
 
 ```sh
-for archive in assets-*.zip; do unzip -n "$archive"; done
+for archive in resources/assets-*.zip; do unzip -n "$archive"; done
 ```
 
 See [SETUP.md](SETUP.md) for folder layout and configuration. Production databases, account credentials, mail settings, payment keys, customer records and uploaded runtime files are intentionally excluded. Configure your own origin, private data location and administrator account before use.
