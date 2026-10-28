@@ -1,0 +1,17 @@
+# Local configuration and runtime data
+.env
+.env.*
+!.env.example
+**/storage/
+**/uploads/
+*.sqlite*
+*.db
+*.key
+**/config.json
+**/mail-config.json
+**/google-mail.json
+**/initial-admin*.json
+!**/initial-admin*.example.json
+node_modules/
+.DS_Store
+*.log

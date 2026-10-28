@@ -1,0 +1,309 @@
+/* =========================================================
+   SAFARI DUBAI PARK
+   GLOBAL DESIGN SYSTEM
+   File: /assets/css/site.css
+   ========================================================= */
+
+/* ---------- GLOBAL COLORS ---------- */
+
+:root{
+    --sdp-navy:#102b35;
+    --sdp-navy-dark:#0b2028;
+    --sdp-navy-light:#17434e;
+
+    --sdp-teal:#0d7882;
+    --sdp-teal-light:#eef8f8;
+
+    --sdp-orange:#f3a940;
+    --sdp-orange-hover:#e99a28;
+
+    --sdp-green:#16804b;
+    --sdp-green-hover:#11683d;
+
+    --sdp-white:#ffffff;
+
+    --sdp-bg:#f6f8f8;
+    --sdp-bg-soft:#fbfcfc;
+
+    --sdp-text:#18333b;
+    --sdp-muted:#687b80;
+
+    --sdp-border:#dce6e8;
+
+    --sdp-shadow:
+        0 8px 28px rgba(16,43,53,.08);
+
+    --sdp-shadow-hover:
+        0 16px 40px rgba(16,43,53,.14);
+}
+
+
+/* ---------- RESET ---------- */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:var(--sdp-bg);
+    color:var(--sdp-text);
+
+    font-size:16px;
+    line-height:1.6;
+
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}
+
+
+/* ---------- TYPOGRAPHY ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color:var(--sdp-navy);
+    font-weight:800;
+    line-height:1.2;
+    margin-top:0;
+}
+
+h1{
+    font-size:clamp(34px,5vw,54px);
+    letter-spacing:-.035em;
+}
+
+h2{
+    font-size:clamp(27px,3vw,36px);
+    letter-spacing:-.025em;
+}
+
+h3{
+    font-size:20px;
+}
+
+p{
+    color:var(--sdp-muted);
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* ---------- GLOBAL CONTAINER ---------- */
+
+.sdp-container{
+    width:min(1500px,calc(100% - 40px));
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* ---------- GLOBAL BUTTONS ---------- */
+
+.sdp-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:44px;
+
+    padding:0 18px;
+
+    border:none;
+    border-radius:10px;
+
+    font-family:inherit;
+    font-size:14px;
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.sdp-btn:hover{
+    transform:translateY(-2px);
+}
+
+
+/* Orange primary button */
+
+.sdp-btn-primary{
+    background:var(--sdp-orange);
+    color:var(--sdp-navy);
+}
+
+.sdp-btn-primary:hover{
+    background:var(--sdp-orange-hover);
+}
+
+
+/* Teal button */
+
+.sdp-btn-teal{
+    background:var(--sdp-teal);
+    color:#fff;
+}
+
+
+/* WhatsApp / green button */
+
+.sdp-btn-green{
+    background:var(--sdp-green);
+    color:#fff;
+}
+
+.sdp-btn-green:hover{
+    background:var(--sdp-green-hover);
+}
+
+
+/* ---------- CARDS ---------- */
+
+.sdp-card{
+    background:#fff;
+
+    border:1px solid var(--sdp-border);
+    border-radius:16px;
+
+    box-shadow:var(--sdp-shadow);
+
+    overflow:hidden;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.sdp-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--sdp-shadow-hover);
+}
+
+
+/* ---------- SECTION ---------- */
+
+.sdp-section{
+    padding-top:55px;
+    padding-bottom:55px;
+}
+
+.sdp-section-title{
+    margin-bottom:8px;
+}
+
+.sdp-section-text{
+    max-width:850px;
+    margin-top:0;
+}
+
+
+/* ---------- LABEL / KICKER ---------- */
+
+.sdp-kicker{
+    color:var(--sdp-teal);
+
+    font-size:12px;
+    font-weight:900;
+
+    letter-spacing:.12em;
+    text-transform:uppercase;
+
+    margin-bottom:7px;
+}
+
+
+/* ---------- PRICE ---------- */
+
+.sdp-price{
+    color:var(--sdp-teal);
+    font-weight:900;
+}
+
+.sdp-old-price{
+    color:#89979b;
+    text-decoration:line-through;
+}
+
+
+/* ---------- BADGES ---------- */
+
+.sdp-badge{
+    display:inline-flex;
+
+    padding:6px 10px;
+
+    border-radius:999px;
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.sdp-badge-green{
+    background:var(--sdp-green);
+    color:#fff;
+}
+
+.sdp-badge-orange{
+    background:var(--sdp-orange);
+    color:var(--sdp-navy);
+}
+
+
+/* ---------- IMAGES ---------- */
+
+img{
+    max-width:100%;
+}
+
+
+/* ---------- FORM ELEMENTS ---------- */
+
+input,
+select,
+textarea,
+button{
+    font-family:inherit;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+    body{
+        font-size:15px;
+    }
+
+    .sdp-container{
+        width:min(100% - 28px,1500px);
+    }
+
+    .sdp-section{
+        padding-top:40px;
+        padding-bottom:40px;
+    }
+}

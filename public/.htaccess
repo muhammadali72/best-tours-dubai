@@ -1,0 +1,40 @@
+Options -Indexes
+DirectoryIndex index.php
+AddType application/javascript .mjs
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://besttoursdubai.com%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} !^besttoursdubai\.com$ [NC]
+RewriteRule ^ https://besttoursdubai.com%{REQUEST_URI} [R=301,L]
+RewriteRule ^(?:wp-admin|wp-includes|wp-content)(?:/|$) - [R=404,L]
+RewriteRule ^(?:wp-login\.php|xmlrpc\.php)$ - [R=404,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+<FilesMatch "^\.">
+Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Cache static assets; private routes and session visitors stay uncached.
+<IfModule LiteSpeed>
+CacheLookup on
+RewriteCond %{HTTP_COOKIE} btd_session= [NC]
+RewriteRule .* - [E=Cache-Control:no-cache]
+</IfModule>
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/x-icon "access plus 30 days"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType text/css "access plus 1 day"
+ExpiresByType application/javascript "access plus 1 day"
+</IfModule>
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
